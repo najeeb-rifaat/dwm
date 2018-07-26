@@ -2,22 +2,19 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"SF Mono:style=Regular:size=20"
+	"SF Mono:style=Regular:size=14"
 };
-
-static const char dmenufont[]       = "SF Mono:style=Regular:size=20";
-
+static const char dmenufont[]       = "SF Mono:style=Regular:size=18";
 static const char normbordercolor[] = "#222222";
 static const char selbordercolor[]  = "#bbbb22";
-
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbb22";
-
 static const char selbgcolor[]      = "#222211";
-static const char selfgcolor[]      = "#11ee00";
-
+static const char selfgcolor[]      = "#ffffff";
+static unsigned int baralpha        = 0xd0;
+static unsigned int borderalpha     = OPAQUE;
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 8;        /* snap pixel */
+static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
@@ -35,9 +32,9 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.65; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */

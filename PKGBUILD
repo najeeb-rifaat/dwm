@@ -16,14 +16,17 @@ depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'st-najeeb' 'dmenu')
 install=dwm.install
 source=(
   "http://dl.suckless.org/dwm/$basepkgname-$pkgver.tar.gz"
+  "https://dwm.suckless.org/patches/alpha/dwm-alpha-6.1.diff"
   "config.h"
 	"dwm.desktop"
 )
-#md5sums=('f0b6b1093b7207f89c2a90b848c008ec')
+
+md5sums=('SKIP')
 
 prepare() {
   cd $srcdir/$basepkgname-$pkgver
-  cp $srcdir/../config.h config.h
+  patch -Np1 -i "$srcdir/dwm-alpha-6.1.diff"
+  cp $srcdir/config.h config.h
 }
 
 build() {
