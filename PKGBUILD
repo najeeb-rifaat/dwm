@@ -1,8 +1,3 @@
-# $Id$
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Contributor: Dag Odenhall <dag.odenhall@gmail.com>
-# Contributor: Grigorios Bouzakis <grbzks@gmail.com>
-
 pkgname=dwm-najeeb
 basepkgname=dwm
 pkgver=6.1
