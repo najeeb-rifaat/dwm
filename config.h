@@ -15,21 +15,22 @@ static const char selfgcolor[]      = "#ffffff";
 static unsigned int baralpha        = 0xd0;
 static unsigned int borderalpha     = OPAQUE;
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 8;       /* snap pixel */
+static const unsigned int snap      = 8;        /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+ 	 *	WM_CLASS(STRING) = instance, class
+ 	 *	WM_NAME(STRING) = title
+ 	 */
+ 	/* class      instance    title       tags mask     isfloating   monitor */
+ 	{ "Gimp",     NULL,       NULL,       0,            True,        -1   },
+ 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1   },
+	{ "kaku",     NULL,       NULL,       4 << 4,       0,           -1   },
 };
 
 /* layout(s) */
@@ -39,9 +40,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "| ",      tile },    /* first entry is default */
+	{ "| ",      NULL },    /* no layout function means floating behavior */
+	{ "| ",      monocle },
 };
 
 /* key definitions */
@@ -82,13 +83,21 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
+  { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+  { MODKEY|ControlMask,           XK_j,      moveresize,     {.v = (int []){ 0, 25, 0, 0 }}},
+  { MODKEY|ControlMask,           XK_k,      moveresize,     {.v = (int []){ 0, -25, 0, 0 }}},
+  { MODKEY|ControlMask,           XK_l,      moveresize,     {.v = (int []){ 25, 0, 0, 0 }}},
+  { MODKEY|ControlMask,           XK_h,      moveresize,     {.v = (int []){ -25, 0, 0, 0 }}},
+  { MODKEY|ShiftMask,             XK_j,      moveresize,     {.v = (int []){ 0, 0, 0, 50 }}},
+  { MODKEY|ShiftMask,             XK_k,      moveresize,     {.v = (int []){ 0, 0, 0, -25 }}},
+  { MODKEY|ShiftMask,             XK_l,      moveresize,     {.v = (int []){ 0, 0, 25, 0 }}},
+  { MODKEY|ShiftMask,             XK_h,      moveresize,     {.v = (int []){ 0, 0, -25, 0 }}},
+  TAGKEYS(                        XK_1,                      0)
+  TAGKEYS(                        XK_2,                      1)
+  TAGKEYS(                        XK_3,                      2)
+  TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)

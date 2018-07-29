@@ -1,7 +1,7 @@
 pkgname=dwm-najeeb
 basepkgname=dwm
 pkgver=6.1
-pkgrel=3
+pkgrel=1
 pkgdesc="A dynamic window manager for X"
 url="http://dwm.suckless.org"
 arch=('x86_64')
@@ -12,17 +12,23 @@ install=dwm.install
 source=(
   "http://dl.suckless.org/dwm/$basepkgname-$pkgver.tar.gz"
   "https://dwm.suckless.org/patches/alpha/dwm-alpha-6.1.diff"
+  "https://dwm.suckless.org/patches/moveresize/dwm-moveresize-6.1.diff"
   "config.h"
+  "dwm.c"
 	"dwm.desktop"
 )
+#"https://dwm.suckless.org/patches/xkb/dwm-6.1-xkb.diff"
 
 md5sums=('SKIP')
 
 prepare() {
   cd $srcdir/$basepkgname-$pkgver
   patch -Np1 -i "$srcdir/dwm-alpha-6.1.diff"
+  patch -Np1 -i "$srcdir/dwm-moveresize-6.1.diff"
+  cp $srcdir/dwm.c dwm.c
   cp $srcdir/config.h config.h
 }
+#patch -Np1 -F4 -i "$srcdir/dwm-6.1-xkb.diff"
 
 build() {
   cd $srcdir/$basepkgname-$pkgver
