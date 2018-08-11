@@ -2,7 +2,7 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"SF Mono:style=Regular:size=14:antialias=true",
+	"SF Mono:style=Regular:size=12:antialias=true",
   "SFMono Nerd Font:style=Medium:size=20:antialias=true"
 };
 static const char dmenufont[]       = "SF Mono:style=Regular:size=20";
@@ -31,6 +31,7 @@ static const Rule rules[] = {
  	{ "Gimp",     NULL,       NULL,       0,            True,        -1   },
  	{ "Firefox",  NULL,       NULL,       1 << 1,       False,       -1   },
  	{ "Surf",     NULL,       NULL,       1 << 1,       False,       -1   },
+ 	{ "Kaku",     NULL,       NULL,       1 << 9,       False,       -1   },
 };
 
 /* layout(s) */

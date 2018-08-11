@@ -94,7 +94,16 @@ print_date(){
 }
 
 print_xkb() {
-  xkb-switch
+  keyboard_layout=$(xkb-switch)
+  keyboard_layout=${keyboard_layout:0:2}
+  keyboard_layout=$(echo $keyboard_layout | awk '{print toupper($0)}')
+  keyboard_caps=$(xset -q | grep '00: Caps Lock:' | cut -d':' -f3 | cut -d' ' -f4)
+  if [ $keyboard_caps = "on" ]
+  then
+    echo "$keyboard_layout "
+  else
+    echo "$keyboard_layout"
+  fi
 }
 
 while true
@@ -107,7 +116,7 @@ do
 	vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 	vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-  xsetroot -name "$(print_mem)M $vel_recv $vel_trans $(print_temp) $(print_wifi) BAT:$(print_bat) VOL:$(print_volume) $(print_date) $(print_xkb)"
+  xsetroot -name "$vel_recv $vel_trans $(print_temp) $(print_wifi) BAT:$(print_bat) VOL:$(print_volume) $(print_date) $(print_xkb)"
 
 	# Update old values to perform new calculations
 	old_received_bytes=$received_bytes
