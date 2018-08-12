@@ -30,7 +30,7 @@ static const Rule rules[] = {
  	/* class      instance    title       tags mask     isfloating   monitor */
  	{ "Gimp",                   NULL,       NULL,       0,            True,        -1   },
  	{ "Firefox",                NULL,       NULL,       1 << 1,       False,       -1   },
- 	{ "Surf",                   NULL,       NULL,       1 << 1,       True,        -1   },
+ 	{ "Surf",                   NULL,       NULL,       1 << 1,       False,       -1   },
   { "libreoffice",            NULL,       NULL,       1 << 2,       False,       -1   },
   { "libreoffice-startcenter",NULL,       NULL,       1 << 2,       False,       -1   },
  	{ "Kaku",                   NULL,       NULL,       1 << 7,       False,       -1   },
