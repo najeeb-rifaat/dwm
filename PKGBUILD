@@ -16,6 +16,7 @@ source=(
   "config.h"
   "dwm.c"
 	"dwm.desktop"
+	"sleeplock.service"
 )
 #"https://dwm.suckless.org/patches/xkb/dwm-6.1-xkb.diff"
 

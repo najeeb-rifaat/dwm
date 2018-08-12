@@ -68,9 +68,9 @@ print_mem(){
 	echo -e "$memfree"
 }
 
-print_temp(){
+print_mem_cpu_info(){
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0
-	echo $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
+  echo $(tmux-mem-cpu-load -a 0 -g 0) $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
 }
 
 print_bat(){
@@ -116,7 +116,7 @@ do
 	vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 	vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-  xsetroot -name "$vel_recv $vel_trans $(print_temp) $(print_wifi) BAT:$(print_bat) VOL:$(print_volume) $(print_date) $(print_xkb)"
+  xsetroot -name "$vel_recv $vel_trans $(print_mem_cpu_info) $(print_wifi) BAT:$(print_bat) VOL:$(print_volume) $(print_date) $(print_xkb)"
 
 	# Update old values to perform new calculations
 	old_received_bytes=$received_bytes
