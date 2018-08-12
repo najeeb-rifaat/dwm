@@ -20,7 +20,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "5", "6", "7", "8", "" };
+static const char *tags[] = { "", "", "", "4", "5", "6", "7", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -28,10 +28,13 @@ static const Rule rules[] = {
  	 *	WM_NAME(STRING) = title
  	 */
  	/* class      instance    title       tags mask     isfloating   monitor */
- 	{ "Gimp",     NULL,       NULL,       0,            True,        -1   },
- 	{ "Firefox",  NULL,       NULL,       1 << 1,       False,       -1   },
- 	{ "Surf",     NULL,       NULL,       1 << 1,       False,       -1   },
- 	{ "Kaku",     NULL,       NULL,       1 << 9,       False,       -1   },
+ 	{ "Gimp",                   NULL,       NULL,       0,            True,        -1   },
+ 	{ "Firefox",                NULL,       NULL,       1 << 1,       False,       -1   },
+ 	{ "Surf",                   NULL,       NULL,       1 << 1,       True,        -1   },
+  { "libreoffice",            NULL,       NULL,       1 << 2,       False,       -1   },
+  { "libreoffice-startcenter",NULL,       NULL,       1 << 2,       False,       -1   },
+ 	{ "Kaku",                   NULL,       NULL,       1 << 7,       False,       -1   },
+ 	{ "Spotify",                NULL,       NULL,       1 << 7,       False,       -1   },
 };
 
 /* layout(s) */
@@ -43,7 +46,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "| ",      tile },    /* first entry is default */
 	{ "| ",      NULL },    /* no layout function means floating behavior */
-	{ "| ",      monocle },
+  { "| ",      monocle },
 };
 
 /* key definitions */

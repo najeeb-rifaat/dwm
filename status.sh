@@ -70,7 +70,7 @@ print_mem(){
 
 print_mem_cpu_info(){
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0
-  echo $(tmux-mem-cpu-load -a 0 -g 0) $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
+  echo $(tmux-mem-cpu-load -a 0 -g 0 -i 1) $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
 }
 
 print_bat(){
@@ -90,7 +90,7 @@ print_bat(){
 }
 
 print_date(){
-	date "+%a %m-%d %T"
+	date "+%a %m-%d %H:%M%p"
 }
 
 print_xkb() {
