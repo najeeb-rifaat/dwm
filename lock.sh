@@ -1,2 +1,2 @@
-  echo %HOME && i3lock -e -i $HOME/Images/background_blur.png
+i3lock -f -e -i /var/background_blur.png
 

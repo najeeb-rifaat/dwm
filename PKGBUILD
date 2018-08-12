@@ -7,7 +7,7 @@ url="http://dwm.suckless.org"
 arch=('x86_64')
 license=('MIT')
 options=(zipman)
-depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'st-najeeb' 'dmenu')
+depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'st-najeeb' 'dmenu' 'i3lock')
 install=dwm.install
 source=(
   "http://dl.suckless.org/dwm/$basepkgname-$pkgver.tar.gz"

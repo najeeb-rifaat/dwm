@@ -7,7 +7,7 @@ Description=Lock the screen on resume from suspend
 User=najee89b
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -f -e -c 000000
+ExecStart=i3lock -f -e -i /var/background_blur.png
 
 [Install]
 WantedBy=sleep.target
