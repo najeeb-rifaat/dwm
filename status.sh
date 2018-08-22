@@ -60,13 +60,13 @@ print_wifi() {
     esac
   done < <(iw "$if" link)
 
-  RESULT=$(echo "${SSID:0:12}" | tr -cd "[:alnum:]")
+  RESULT=$(echo "${SSID:0:10}" | tr -cd "[:alnum:]")
   echo "$RESULT $SIGNAL $ip"
 }
 
 print_mem(){
   memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
-  echo -e "$memfree MB"
+  echo -e "${memfree}MB"
 }
 
 print_bat(){
