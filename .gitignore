@@ -1,6 +1,6 @@
 src/
 pkg/
-dwm-**.diff
-dwm-**.tar.*
-
-
+*.gz
+*.tar
+*.diff
+*.xz
