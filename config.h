@@ -17,7 +17,7 @@ static const char col_gray4[]       = "#99909F";
 static const char col_gray5[]       = "#FCDC04";
 static const char col_gray6[]       = "#FCDC04";
 
-#include "/home/najee89b/.cache/wal/colors-wal-dwm.6.2.h"
+#include "/home/najee89b/colors-wal-dwm.6.2.h"
 
 //static const char *colors[][3]      = {
 //	/*               fg         bg         border   */

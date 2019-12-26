@@ -15,6 +15,7 @@ conflicts=("${basepkgname}")
 install=dwm.install
 
 _patches=(
+  "colors-wal-dwm.6.2.h"
   "https://dwm.suckless.org/patches/activetagindicatorbar/dwm-activetagindicatorbar-6.2.diff"
   "https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-6.2.diff"
   "https://dwm.suckless.org/patches/moveresize/dwm-moveresize-20160731-56a31dc.diff"
@@ -37,6 +38,7 @@ prepare() {
 #patch -Np1 -F4 -i "$srcdir/dwm-6.1-xkb.diff"
 
 build() {
+  cd $srcdir/colors-wal-dwm.6.2.h ~/
   cd $srcdir/$basepkgname-$pkgver
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-moveresize-20160731-56a31dc.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-activetagindicatorbar-6.2.diff"
