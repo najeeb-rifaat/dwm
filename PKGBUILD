@@ -25,8 +25,6 @@ source=(
   "${_patches[@]}"
   "config.h"
 	"dwm.desktop"
-	"sleeplock.service"
-  ".xinitrc"
 )
 
 md5sums=('SKIP')
@@ -36,7 +34,6 @@ prepare() {
 }
 
 build() {
-  cp --remove-destination $srcdir/.xinitrc ~/
   cd $srcdir/$basepkgname-$pkgver
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-moveresize-20160731-56a31dc.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-activetagindicatorbar-6.2.diff"
