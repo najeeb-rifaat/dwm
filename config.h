@@ -17,7 +17,7 @@ static const char col_gray4[]       = "#99909F";
 static const char col_gray5[]       = "#FCDC04";
 static const char col_gray6[]       = "#FCDC04";
 
-#include "/home/najee89b/colors-wal-dwm.6.2.h"
+#include "/home/najee89b/.cache/wal/colors-wal-dwm.6.2.h"
 
 //static const char *colors[][3]      = {
 //	/*               fg         bg         border   */
@@ -83,8 +83,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_x,      killclient,     {0} },
+	{ MODKEY,                       XK_Tab,    view,           {0} }, { MODKEY|ShiftMask,             XK_x,      killclient,     {0} },
   { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },

@@ -9,18 +9,16 @@ url="http://dwm.suckless.org"
 arch=('x86_64')
 license=('MIT')
 options=(zipman)
-depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'st-najeeb' 'dmenu-najeeb' 'i3lock')
+depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 'xcompmgr' 'feh' 'python-pywal' 'st-najeeb' 'dmenu-najeeb' 'i3lock')
 provides=("${pkgname}")
 conflicts=("${basepkgname}")
 install=dwm.install
 
 _patches=(
-  "colors-wal-dwm.6.2.h"
   "https://dwm.suckless.org/patches/activetagindicatorbar/dwm-activetagindicatorbar-6.2.diff"
   "https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-6.2.diff"
   "https://dwm.suckless.org/patches/moveresize/dwm-moveresize-20160731-56a31dc.diff"
   "https://dwm.suckless.org/patches/pertag/dwm-pertag-20170513-ceac8c9.diff"
-  "dwm.c"
 )
 source=(
   "http://dl.suckless.org/dwm/$basepkgname-$pkgver.tar.gz"
@@ -28,6 +26,7 @@ source=(
   "config.h"
 	"dwm.desktop"
 	"sleeplock.service"
+  ".xinitrc"
 )
 
 md5sums=('SKIP')
@@ -35,10 +34,9 @@ md5sums=('SKIP')
 prepare() {
   cd $srcdir/$basepkgname-$pkgver
 }
-#patch -Np1 -F4 -i "$srcdir/dwm-6.1-xkb.diff"
 
 build() {
-  cp $srcdir/colors-wal-dwm.6.2.h ~/
+  cp --remove-destination $srcdir/.xinitrc ~/
   cd $srcdir/$basepkgname-$pkgver
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-moveresize-20160731-56a31dc.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-activetagindicatorbar-6.2.diff"
