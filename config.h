@@ -6,7 +6,7 @@ static const unsigned int gappx     = 12;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "SF Mono:style=Regular:size=18" };
+static const char *fonts[]          = { "SF Mono:size=14", "RobotoMonoNerdFont:style=Regular:size=14" };
 static const char dmenufont[]       = "SF Mono:style=Regular:size=32:antialias=true";
 
 static const char col_gray1[]       = "#229999";
@@ -26,7 +26,7 @@ static const char col_gray6[]       = "#FCDC04";
 //};
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
