@@ -70,6 +70,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", " What: 
 static const char *termcmd[]  = { "st", NULL };
 static const char *langcmd[]  = { "sh", "-c", "xkb-switch -n" };
 static const char *clipcmd[]  = { "sh", "-c", "clip" };
+static const char *passcmd[]  = { "sh", "-c", "xpass" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -77,6 +78,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
   { MODKEY|ControlMask,           XK_space,  spawn,          {.v = langcmd } },
   { MODKEY,                       XK_v,      spawn,          {.v = clipcmd } },
+  { MODKEY,                       XK_s,      spawn,          {.v = passcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
