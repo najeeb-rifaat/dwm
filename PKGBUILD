@@ -17,7 +17,6 @@ install=dwm.install
 _patches=(
   "https://dwm.suckless.org/patches/activetagindicatorbar/dwm-activetagindicatorbar-6.2.diff"
   "https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-6.2.diff"
-  "https://dwm.suckless.org/patches/moveresize/dwm-moveresize-20160731-56a31dc.diff"
   "https://dwm.suckless.org/patches/pertag/dwm-pertag-20170513-ceac8c9.diff"
   "https://dwm.suckless.org/patches/noborder/dwm-noborder-6.2.diff"
 )
@@ -36,7 +35,6 @@ prepare() {
 
 build() {
   cd $srcdir/$basepkgname-$pkgver
-  patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-moveresize-20160731-56a31dc.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-activetagindicatorbar-6.2.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-fullgaps-6.2.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-pertag-20170513-ceac8c9.diff"
