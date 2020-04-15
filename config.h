@@ -26,18 +26,16 @@ static const char col_gray6[]       = "#FCDC04";
 //};
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-  { "Firefox",                NULL,       NULL,       1 << 2,       False,       -1   },
-  //{ "Gimp",                   NULL,       NULL,       0,            True,        -1   },
-  //{ "Firefox",                NULL,       NULL,       1 << 1,       False,       -1   },
-  //{ "Surf",                   NULL,       NULL,       1 << 1,       False,       -1   },
+	/* class        instance    title       tags mask     isfloating   monitor */
+  { "firefox",    NULL,       NULL,       1 << 1,       False,       -1   },
+  { "Mailspring", NULL,       NULL,       1 << 2,       False,       -1   },
 };
 
 /* layout(s) */
@@ -46,10 +44,10 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+  /* symbol     arrange function */
+  { "[]=",      tile },    /* first entry is default */
+  { "><>",      NULL },    /* no layout function means floating behavior */
+  { "[M]",      monocle },
 };
 
 /* key definitions */
