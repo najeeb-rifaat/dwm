@@ -33,9 +33,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class        instance    title       tags mask     isfloating   monitor */
-  { "firefox",    NULL,       NULL,       1 << 1,       False,       -1   },
-  { "Mailspring", NULL,       NULL,       1 << 2,       False,       -1   },
+	/* class         instance    title       tags mask     isfloating   monitor */
+  { "firefox",     NULL,       NULL,       1 << 1,       False,       -1   },
+  { "Mailspring",  NULL,       NULL,       1 << 2,       False,       -1   },
+  { "qBittorrent", NULL,       NULL,       1 << 6,       False,       -1   },
 };
 
 /* layout(s) */
