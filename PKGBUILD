@@ -19,6 +19,7 @@ _patches=(
   "https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-6.2.diff"
   "https://dwm.suckless.org/patches/pertag/dwm-pertag-6.2.diff"
   "https://dwm.suckless.org/patches/noborder/dwm-noborder-6.2.diff"
+  "https://dwm.suckless.org/patches/focusonnetactive/dwm-focusonnetactive-2017-12-24-3756f7f.diff"
 )
 source=(
   "http://dl.suckless.org/dwm/$basepkgname-$pkgver.tar.gz"
@@ -39,6 +40,7 @@ build() {
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-fullgaps-6.2.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-pertag-6.2.diff"
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-noborder-6.2.diff"
+  patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-focusonnetactive-2017-12-24-3756f7f.diff"
 
   cp $srcdir/config.h config.h
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11 FREETYPEINC=/usr/include/freetype2
