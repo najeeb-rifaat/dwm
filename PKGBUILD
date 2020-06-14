@@ -25,6 +25,7 @@ source=(
   "http://dl.suckless.org/dwm/$basepkgname-$pkgver.tar.gz"
   "${_patches[@]}"
   "config.h"
+  "tcl.c"
   "dwm.desktop"
 )
 
@@ -43,6 +44,7 @@ build() {
   patch -Np1 -F3 --ignore-whitespace < "$srcdir/dwm-focusonnetactive-2017-12-24-3756f7f.diff"
 
   cp $srcdir/config.h config.h
+  cp $srcdir/tcl.c tcl.c
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11 FREETYPEINC=/usr/include/freetype2
 }
 
