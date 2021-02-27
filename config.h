@@ -1,32 +1,30 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 12;       /* gaps between windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "SF Mono:size=14", "RobotoMonoNerdFont:style=Regular:size=14" };
+static const char *fonts[]          = { "SF Mono:size=16", "RobotoMonoNerdFont:style=Regular:size=16" };
 static const char dmenufont[]       = "SF Mono:size=24";
 
-static const char col_gray1[]       = "#229999";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#F8F8FA";
+static const char col_gray1[]       = "#000000";
+static const char col_gray2[]       = "#000000";
+static const char col_gray3[]       = "#FFFFFF";
 
-static const char col_gray4[]       = "#99909F";
-static const char col_gray5[]       = "#FCDC04";
-static const char col_gray6[]       = "#FCDC04";
+static const char col_gray4[]       = "#686868";
+static const char col_gray5[]       = "#FFFDDD";
+static const char col_gray6[]       = "#FFF001";
 
-#include "/home/najee89b/.cache/wal/colors-wal-dwm.6.2.h"
-
-//static const char *colors[][3]      = {
-//	/*               fg         bg         border   */
-//	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-//	[SchemeSel]  = { col_gray6, col_gray4, col_gray5 },
-//};
+static const char *colors[][3]      = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray6, col_gray4, col_gray5 },
+};
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "8", "9" };
+static const char *tags[] = { "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,9 +32,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class         instance    title       tags mask     isfloating   monitor */
-  { "firefox",     NULL,       NULL,       1 << 1,       False,       -1   },
-  { "Mailspring",  NULL,       NULL,       1 << 2,       False,       -1   },
-  { "qBittorrent", NULL,       NULL,       1 << 6,       False,       -1   },
+  { "Mailspring",  NULL,       NULL,       1 << 7,       False,       -1   },
+  { "qBittorrent", NULL,       NULL,       1 << 8,       False,       -1   },
+  { "apple-music-electron", NULL,       NULL,       1 << 8,       False,       -1   },
 };
 
 /* layout(s) */

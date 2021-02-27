@@ -4,3 +4,4 @@ pkg/
 *.tar
 *.diff
 *.xz
+*.zst
